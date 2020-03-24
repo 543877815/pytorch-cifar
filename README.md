@@ -45,7 +45,7 @@ I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
 | ResNeXt29_2x64d | 9,128,778  | 1416.64  | 95.19% |
 | ResNeXt29_4x64d | 27,104,586 | 4242.25  | 93.70% |
 | ResNeXt29_8x64d | 89,598,280 | 14121.32 | -      |
-| ResNeXt29_32x4d | 4,774,218  | 779.63   | -      |
+| ResNeXt29_32x4d | 4,774,218  | 779.63   | 92.58% |
 | DenseNet121     | 6,956,298  | 898.06   | 95.10% |
 | DenseNet161     | 26,482,378 | 2485.99  | 93.69% |
 | DenseNet169     | 12,493,322 | 1071.71  | 94.12% |
@@ -69,3 +69,4 @@ I manually change the `lr` during training:
 - `0.001` for epoch `[250,350)`
 
 Resume the training with `python main.py --resume --lr=0.01`
+
