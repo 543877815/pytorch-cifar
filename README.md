@@ -3,12 +3,10 @@
 I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
 
 ## Prerequisites
-
 - Python 3.6+
 - PyTorch 1.0+
 
 ## Accuracy
-
 | Model                                                | Acc.   |
 | ---------------------------------------------------- | ------ |
 | [VGG16](https://arxiv.org/abs/1409.1556)             | 92.64% |
@@ -26,7 +24,7 @@ I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
 
 **Params** and **MACs** are evaluated using [thop](https://github.com/Lyken17/pytorch-OpCounter)
 
-| Model           | Params     | FLOPs(G) | Acc.   |
+| Model           | Params     | MACs     | Acc.   |
 | --------------- | ---------- | -------- | ------ |
 | LeNet           | 62,007     | 0.71     | 75.44% |
 | Vgg11           | 9,231,114  | 153.22   | 91.67% |
@@ -38,9 +36,9 @@ I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
 | ResNet50        | 23,520,842 | 1304.71  | 94.81% |
 | PreActResNet18  | 11,171,146 | 556.52   | 93.92% |
 | PreActResNet34  | 21,279,306 | 1161.32  | 93.39% |
-| PreActResNet50  | 23,509,066 | 1303.66  | -      |
-| PreActResNet101 | 42,501,192 | 2519.16  | -      |
-| PreActResNet152 | 58,144,840 | 3735.44  | -      |
+| PreActResNet50  | 23,509,066 | 1303.66  | 94.41% |
+| PreActResNet101 | 42,501,192 | 2519.16  | 93.38% |
+| PreActResNet152 | 58,144,840 | 3735.44  | 94.85% |
 | GoogLeNet       | 6,166,250  | 1529.43  | 94.27% |
 | ResNeXt29_2x64d | 9,128,778  | 1416.64  | 95.19% |
 | ResNeXt29_4x64d | 27,104,586 | 4242.25  | 93.70% |
@@ -58,15 +56,13 @@ I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
 | SENet18         | 11,260,354 | 556.74   | 93.65% |
 | DPN26           | 11,574,842 | 670.31   | 94.01% |
 | DPN92           | 34,236,634 | 2053.89  | 94.36% |
-| EfficientNetB0  | 2,912,089  | 27.92    | 88.18% |
+| EfficientNetB0  | 2,912,089  | 27.92    | 88.52% |
 
 ## Learning rate adjustment
 
 I manually change the `lr` during training:
-
 - `0.1` for epoch `[0,150)`
 - `0.01` for epoch `[150,250)`
 - `0.001` for epoch `[250,350)`
 
 Resume the training with `python main.py --resume --lr=0.01`
-
